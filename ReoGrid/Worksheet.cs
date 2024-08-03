@@ -2203,13 +2203,17 @@ namespace unvell.ReoGrid
 			ExportAsHTML(s, null);
 		}
 
-		/// <summary>
-		/// Export spreadsheet as html into specified stream
-		/// </summary>
-		/// <param name="s">Stream is used to write html content</param>
-		/// <param name="pageTitle">A string will be printed out to the html as page title</param>
-		/// <param name="exportHeader">true to export the html headers, false to export content only inside table tag.</param>
-		public void ExportAsHTML(Stream s, string pageTitle, bool exportHeader = true)
+        public void ExportAsLXV(Stream s) {
+            ExportAsLXV(s, 0);
+        }
+
+        /// <summary>
+        /// Export spreadsheet as html into specified stream
+        /// </summary>
+        /// <param name="s">Stream is used to write html content</param>
+        /// <param name="pageTitle">A string will be printed out to the html as page title</param>
+        /// <param name="exportHeader">true to export the html headers, false to export content only inside table tag.</param>
+        public void ExportAsHTML(Stream s, string pageTitle, bool exportHeader = true)
 		{
 			RGHTMLExporter.Export(s, this, string.IsNullOrEmpty(pageTitle) ? "Exported ReoGrid" : pageTitle, exportHeader);
 		}

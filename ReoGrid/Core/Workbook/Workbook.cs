@@ -120,7 +120,8 @@ namespace unvell.ReoGrid
 			FileFormatProviders[FileFormat.ReoGridFormat] = (IFileFormatProvider)new ReoGridFileFormatProvider();
 			FileFormatProviders[FileFormat.Excel2007] = (IFileFormatProvider)new ExcelFileFormatProvider();
 			FileFormatProviders[FileFormat.CSV] = (IFileFormatProvider)new CSVFileFormatProvider();
-		}
+            FileFormatProviders[FileFormat.LXV] = (IFileFormatProvider)new LXVFileFormatProvider();
+        }
 
 		/// <summary>
 		/// Clear all worksheets.

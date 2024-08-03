@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AlignmentPage_Degrees" xml:space="preserve">
     <value>Degrees</value>
@@ -175,10 +175,10 @@
     <value>CSV File(*.csv)|*.csv|Text file(*.txt)|*.txt|All files(*.*)|*.*</value>
   </data>
   <data name="Filter_Load_File" xml:space="preserve">
-    <value>All Supported Files(*.xlsx;*.csv;*.rgf)|*.xlsx;*.csv;*.rgf|ReoGrid XML Format(*.rgf)|*.rgf|Excel 2007(*.xlsx)|*.xlsx|CSV File(*.csv)|*.csv|All Files(*.*)|*.*</value>
+    <value>All Supported Files(*.xlsx;*.csv;*.rgf,*.lxv)|*.xlsx;*.csv;*.rgf;*.lxv|ReoGrid XML Format(*.rgf)|*.rgf|Excel 2007(*.xlsx)|*.xlsx|CSV File(*.csv)|*.csv|LXV文件(*.lxv)|*.lxv||All Files(*.*)|*.*</value>
   </data>
   <data name="Filter_Save_File" xml:space="preserve">
-    <value>Excel 2007(*.xlsx)|*.xlsx|ReoGrid XML Format(*.rgf)|*.rgf|CSV File(*.csv)|*.csv|All Files(*.*)|*.*</value>
+    <value>Excel 2007(*.xlsx)|*.xlsx|ReoGrid XML Format(*.rgf)|*.rgf|CSV File(*.csv)|*.csv|LXV文件(*.lxv)|*.lxv|All Files(*.*)|*.*</value>
   </data>
   <data name="FormatPage_Category" xml:space="preserve">
     <value>&amp;Category:</value>

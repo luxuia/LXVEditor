@@ -243,7 +243,22 @@ namespace unvell.ReoGrid.Editor
 				}
 			};
 
-			editXMLToolStripMenuItem.Click += (s, e) =>
+            exportAsLXVToolStripMenuItem.Click += (s, e) => {
+                using (SaveFileDialog sfd = new SaveFileDialog()) {
+                    sfd.Filter = "LXV File(*.lxv)|*.lxv";
+                    sfd.FileName = "Exported ReoGrid Worksheet";
+
+                    if (sfd.ShowDialog() == DialogResult.OK) {
+                        using (FileStream fs = new FileStream(sfd.FileName, FileMode.Create)) {
+                            this.CurrentWorksheet.ExportAsLXV(fs);
+                        }
+
+                        RGUtility.OpenFileOrLink(sfd.FileName);
+                    }
+                }
+            };
+
+            editXMLToolStripMenuItem.Click += (s, e) =>
 			{
 				string filepath = null;
 
@@ -1636,9 +1651,11 @@ namespace unvell.ReoGrid.Editor
 			else if (path.EndsWith(".csv", StringComparison.CurrentCultureIgnoreCase))
 			{
 				fm = FileFormat.CSV;
-			}
+            } else if (path.EndsWith(".lxv", StringComparison.CurrentCultureIgnoreCase)) {
+                fm = FileFormat.LXV;
+            }
 
-			try
+            try
 			{
 				this.grid.Save(path, fm);
 
@@ -1724,7 +1741,10 @@ namespace unvell.ReoGrid.Editor
 						case FileFormat.CSV:
 							sfd.FilterIndex = 3;
 							break;
-					}
+                        case FileFormat.LXV:
+                            sfd.FilterIndex = 4;
+                            break;
+                    }
 				}
 
 				if (sfd.ShowDialog(this) == DialogResult.OK)
@@ -1855,8 +1875,9 @@ namespace unvell.ReoGrid.Editor
 			else if (ext.Equals(".csv", StringComparison.CurrentCultureIgnoreCase))
 			{
 				return FileFormat.CSV;
-			}
-			else
+			} else if (ext.Equals(".lxv", StringComparison.CurrentCultureIgnoreCase)) {
+                return FileFormat.LXV;
+            } else
 			{
 				return FileFormat._Auto;
 			}

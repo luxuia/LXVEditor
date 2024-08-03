@@ -1,40 +1,12 @@
 # ReoGrid
 
-![NuGet](https://img.shields.io/nuget/v/unvell.ReoGrid.DLL.svg)
+基于ReoGrid的 CSV扩展编辑器， 给csv提供更多扩展
 
-Fast and powerful open source .NET spreadsheet component
+1. 自定义的分隔符       ---sep:∤
+2. 多sheet支持         ---sheet:xxx
+3. 注释                ---meta:marco:xxx
+3. 图片等二进制数据     ---meta:tex:base64
 
-https://reogrid.net
-
-# Documentations
-
-https://reogrid.net/document
-
-# Snapshots
-
-Read from Excel<br />
-![Snapshot - Read from Excel](Snapshots/02.png)
-
-Print Settings<br />
-![Snapshot - Print setting](Snapshots/01_2.png)
-
-Charts<br />
-![Snapshot - Charts](Snapshots/276.png)
-
-Cells Freeze<br />
-![Snapshot - Freeze](Snapshots/08.png)
-
-Cell Types and Controls<br />
-![Snapshot - Cell Types and Controls](Snapshots/62.png)
-
-Group and Outline<br />
-![Snapshot - Group and Outline](Snapshots/61.png)
-
-Custom Control Appearance<br />
-![Snapshot - Custom Control Appearance](Snapshots/21.png)
-
-Script and Macro Execution<br />
-![Snapshot - Script and Macro](Snapshots/27.png)
 
 # License
 

@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AlignmentPage_Degrees" xml:space="preserve">
     <value>度</value>
@@ -175,10 +175,10 @@
     <value>CSV 文件(*.csv)|*.csv|文本文件(*.txt)|*.txt|所有文件(*.*)|*.*</value>
   </data>
   <data name="Filter_Load_File" xml:space="preserve">
-    <value>所有支持的格式(*.xlsx;*.csv;*.rgf)|*.xlsx;*.csv;*.rgf|RGF 格式(*.rgf)|*.rgf|Excel 2007(*.xlsx)|*.xlsx|CSV 文件(*.csv)|*.csv|所有文件(*.*)|*.*</value>
+    <value>所有支持的格式(*.xlsx;*.csv;*.rgf,*.lxv)|*.xlsx;*.csv;*.rgf;*.lxv|RGF 格式(*.rgf)|*.rgf|Excel 2007(*.xlsx)|*.xlsx|CSV 文件(*.csv)|*.csv|LXV文件(*.lxv)|*.lxv|所有文件(*.*)|*.*</value>
   </data>
   <data name="Filter_Save_File" xml:space="preserve">
-    <value>Excel 2007(*.xlsx)|*.xlsx|RGF 文件(*.rgf)|*.rgf|CSV 文件(*.csv)|*.csv|所有文件(*.*)|*.*</value>
+    <value>Excel 2007(*.xlsx)|*.xlsx|RGF 文件(*.rgf)|*.rgf|CSV 文件(*.csv)|*.csv|LXV文件(*.lxv)|*.lxv|所有文件(*.*)|*.*</value>
   </data>
   <data name="FormatPage_Category" xml:space="preserve">
     <value>分类(&amp;C):</value>

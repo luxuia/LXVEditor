@@ -40,10 +40,10 @@ namespace unvell.ReoGrid.IO
 		/// </summary>
 		CSV = 10,
 
-		/// <summary>
-		/// Excel 2007 (Office OpenXML-based format)
-		/// </summary>
-		Excel2007 = 30,
+        /// <summary>
+        /// Excel 2007 (Office OpenXML-based format)
+        /// </summary>
+        Excel2007 = 30,
 
 		/// <summary>
 		/// Decide file format by extension automatically
@@ -54,7 +54,10 @@ namespace unvell.ReoGrid.IO
 		/// User-defined file format provider (Reserved)
 		/// </summary>
 		_Custom = 100,
-	}
+
+
+        LXV = 110,
+    }
 
 	#region File Format Provider Interface
 

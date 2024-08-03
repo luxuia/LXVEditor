@@ -222,7 +222,9 @@ namespace unvell.ReoGrid.Editor
 			this.toolStripMenuItem17 = new System.Windows.Forms.ToolStripSeparator();
 			this.editXMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exportAsHtmlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.exportAsCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exportAsLXVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.exportAsCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exportCurrentWorksheetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exportSelectedRangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
@@ -1873,6 +1875,7 @@ namespace unvell.ReoGrid.Editor
             this.toolStripMenuItem17,
             this.editXMLToolStripMenuItem,
             this.exportAsHtmlToolStripMenuItem,
+            exportAsLXVToolStripMenuItem,
             this.exportAsCSVToolStripMenuItem,
             this.toolStripMenuItem7,
             this.printPreviewToolStripMenuItem,
@@ -1939,10 +1942,15 @@ namespace unvell.ReoGrid.Editor
 			this.exportAsHtmlToolStripMenuItem.Name = "exportAsHtmlToolStripMenuItem";
 			this.exportAsHtmlToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
 			this.exportAsHtmlToolStripMenuItem.Text = "Export as HTML...";
-			// 
-			// exportAsCSVToolStripMenuItem
-			// 
-			this.exportAsCSVToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+
+            this.exportAsLXVToolStripMenuItem.Name = "exportAsLXVToolStripMenuItem";
+            this.exportAsLXVToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.exportAsLXVToolStripMenuItem.Text = "Export as LSV...";
+
+            // 
+            // exportAsCSVToolStripMenuItem
+            // 
+            this.exportAsCSVToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exportCurrentWorksheetToolStripMenuItem,
             this.exportSelectedRangeToolStripMenuItem});
 			this.exportAsCSVToolStripMenuItem.Name = "exportAsCSVToolStripMenuItem";
@@ -3362,7 +3370,8 @@ namespace unvell.ReoGrid.Editor
 		private System.Windows.Forms.ToolStripMenuItem validateAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem rowHeightToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exportAsHtmlToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem scriptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportAsLXVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem scriptToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem scriptEditorToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem16;
 		private System.Windows.Forms.ToolStripMenuItem runFunctionToolStripMenuItem;
