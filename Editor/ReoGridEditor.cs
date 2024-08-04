@@ -43,6 +43,8 @@ using unvell.ReoGrid.Editor.LangRes;
 using unvell.ReoGrid.Print;
 using unvell.ReoGrid.Drawing;
 using unvell.ReoGrid.Drawing.Text;
+using unvell.ReoGrid.Editor.dialogue;
+
 
 #if EX_SCRIPT
 using unvell.ReoScript.Editor;
@@ -361,6 +363,9 @@ namespace unvell.ReoGrid.Editor
 					colCutToolStripMenuItem.Enabled =
 					colCopyToolStripMenuItem.Enabled =
 					colPasteToolStripMenuItem.Enabled =
+					findToolStripMenuItem.Enabled =
+					colFindToolStripMenuItem.Enabled =
+					rowFindToolStripMenuItem.Enabled =
 						true;
 				};
 
@@ -383,7 +388,10 @@ namespace unvell.ReoGrid.Editor
 				colCutToolStripMenuItem.Enabled =
 				colCopyToolStripMenuItem.Enabled =
 				colPasteToolStripMenuItem.Enabled =
-					false;
+                        findToolStripMenuItem.Enabled =
+                    colFindToolStripMenuItem.Enabled =
+                    rowFindToolStripMenuItem.Enabled =
+                    false;
 			};
 
 			defineNamedRangeToolStripMenuItem.Click += (s, e) =>
@@ -538,12 +546,14 @@ namespace unvell.ReoGrid.Editor
 			rowCutToolStripMenuItem.Click += this.cutRangeToolStripMenuItem_Click;
 			rowCopyToolStripMenuItem.Click += this.copyRangeToolStripMenuItem_Click;
 			rowPasteToolStripMenuItem.Click += this.pasteRangeToolStripMenuItem_Click;
+            rowFindToolStripMenuItem.Click += RowFindToolStripMenuItem_Click;
 
 			colCutToolStripMenuItem.Click += this.cutRangeToolStripMenuItem_Click;
 			colCopyToolStripMenuItem.Click += this.copyRangeToolStripMenuItem_Click;
 			colPasteToolStripMenuItem.Click += this.pasteRangeToolStripMenuItem_Click;
+            colFindToolStripMenuItem.Click += RowFindToolStripMenuItem_Click;
 
-			rowFormatCellsToolStripMenuItem.Click += this.formatCellToolStripMenuItem_Click;
+            rowFormatCellsToolStripMenuItem.Click += this.formatCellToolStripMenuItem_Click;
 			colFormatCellsToolStripMenuItem.Click += this.formatCellToolStripMenuItem_Click;
 
 			printSettingsToolStripMenuItem.Click += this.printSettingsToolStripMenuItem_Click;
@@ -693,7 +703,10 @@ namespace unvell.ReoGrid.Editor
 			columnFilterToolStripMenuItem.Click += filterToolStripMenuItem_Click;
 			clearColumnFilterToolStripMenuItem.Click += clearFilterToolStripMenuItem_Click;
 
-			this.grid.ExceptionHappened += (s, e) =>
+			//finderMenuItem.Click += findCellMenuItem_Click;
+
+
+            this.grid.ExceptionHappened += (s, e) =>
 			{
 				if (e.Exception is RangeIntersectionException)
 				{
@@ -790,7 +803,53 @@ namespace unvell.ReoGrid.Editor
 			ResumeLayout();
 		}
 
-		private void ExportAsCsv(RangePosition range)
+        private void RowFindToolStripMenuItem_Click(object sender, EventArgs e) {
+
+			using (Form1 form = new Form1()) {
+				if (form.ShowDialog(this) == DialogResult.OK) {
+					var text = form.GetText();
+
+					if (text != null) {
+
+						var worksheet = grid.CurrentWorksheet;
+						var maxRow = worksheet.RowCount;
+
+						CellPosition pos = new CellPosition(-1, -1);
+						// 检查最大列
+						for (int r = 0; r <= maxRow; r++) {
+							for (int c = 0; c <= worksheet.ColumnCount; c++) {
+								var cell = worksheet.GetCell(r, c);
+								if (cell == null || !cell.IsValidCell) {
+								} else {
+									var data = cell.Data;
+
+									if (data is string str) {
+									} else {
+										str = Convert.ToString(data);
+									}
+
+									if (str.Contains(text)) {
+										pos = new CellPosition(r, c);
+										break;
+									}
+								}
+							}
+							if (pos.Row >= 0) {
+								break;
+							}
+						}
+
+						if (pos.Row >= 0) {
+							grid.CurrentWorksheet.SelectionRange = new RangePosition(pos, pos);
+							//this.grid.CurrentWorksheet.FocusPos = pos;
+						}
+					}
+				}
+			}
+
+        }
+
+        private void ExportAsCsv(RangePosition range)
 		{
 			using (SaveFileDialog dlg = new SaveFileDialog())
 			{
@@ -2695,6 +2754,8 @@ namespace unvell.ReoGrid.Editor
 				form.ShowDialog(this);
 			}
 		}
+
+
 
 		private void printPreviewToolStripMenuItem_Click(object sender, EventArgs e)
 		{

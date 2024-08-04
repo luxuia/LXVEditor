@@ -135,7 +135,8 @@ namespace unvell.ReoGrid.Editor
 			this.colCutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.colCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.colPasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem42 = new System.Windows.Forms.ToolStripSeparator();
+            this.colFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem42 = new System.Windows.Forms.ToolStripSeparator();
 			this.insertColToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteColumnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -146,7 +147,9 @@ namespace unvell.ReoGrid.Editor
 			this.toolStripMenuItem21 = new System.Windows.Forms.ToolStripSeparator();
 			this.columnFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clearColumnFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem35 = new System.Windows.Forms.ToolStripSeparator();
+			finderMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.toolStripMenuItem35 = new System.Windows.Forms.ToolStripSeparator();
 			this.groupColumnsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.ungroupColumnsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 			this.ungroupAllColumnsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -160,7 +163,8 @@ namespace unvell.ReoGrid.Editor
 			this.rowCutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.rowCopyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.rowPasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripMenuItem41 = new System.Windows.Forms.ToolStripSeparator();
+            this.rowFindToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem41 = new System.Windows.Forms.ToolStripSeparator();
 			this.insertRowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.deleteRowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripSeparator();
@@ -242,6 +246,7 @@ namespace unvell.ReoGrid.Editor
 			this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clearAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.toolStripMenuItem38 = new System.Windows.Forms.ToolStripSeparator();
@@ -1171,6 +1176,7 @@ namespace unvell.ReoGrid.Editor
             this.colCutToolStripMenuItem,
             this.colCopyToolStripMenuItem,
             this.colPasteToolStripMenuItem,
+			colFindToolStripMenuItem,
             this.toolStripMenuItem42,
             this.insertColToolStripMenuItem,
             this.deleteColumnToolStripMenuItem,
@@ -1182,6 +1188,7 @@ namespace unvell.ReoGrid.Editor
             this.toolStripMenuItem21,
             this.columnFilterToolStripMenuItem,
             this.clearColumnFilterToolStripMenuItem,
+
             this.toolStripMenuItem35,
             this.groupColumnsToolStripMenuItem1,
             this.ungroupColumnsToolStripMenuItem1,
@@ -1215,10 +1222,15 @@ namespace unvell.ReoGrid.Editor
 			this.colPasteToolStripMenuItem.Name = "colPasteToolStripMenuItem";
 			this.colPasteToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.colPasteToolStripMenuItem.Text = "Paste";
-			// 
-			// toolStripMenuItem42
-			// 
-			this.toolStripMenuItem42.Name = "toolStripMenuItem42";
+
+            this.colFindToolStripMenuItem.Image = global::unvell.ReoGrid.Editor.Properties.Resources.PasteHS;
+            this.colFindToolStripMenuItem.Name = "colFindToolStripMenuItem";
+            this.colFindToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.colFindToolStripMenuItem.Text = "Find";
+            // 
+            // toolStripMenuItem42
+            // 
+            this.toolStripMenuItem42.Name = "toolStripMenuItem42";
 			this.toolStripMenuItem42.Size = new System.Drawing.Size(189, 6);
 			// 
 			// insertColToolStripMenuItem
@@ -1282,10 +1294,14 @@ namespace unvell.ReoGrid.Editor
 			this.clearColumnFilterToolStripMenuItem.Name = "clearColumnFilterToolStripMenuItem";
 			this.clearColumnFilterToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.clearColumnFilterToolStripMenuItem.Text = "Clear Filter";
-			// 
-			// toolStripMenuItem35
-			// 
-			this.toolStripMenuItem35.Name = "toolStripMenuItem35";
+            // 
+
+            this.finderMenuItem.Name = "FindMenuItem";
+            this.finderMenuItem.Size = new System.Drawing.Size(192, 22);
+            this.finderMenuItem.Text = "Find";
+            // toolStripMenuItem35
+            // 
+            this.toolStripMenuItem35.Name = "toolStripMenuItem35";
 			this.toolStripMenuItem35.Size = new System.Drawing.Size(189, 6);
 			// 
 			// groupColumnsToolStripMenuItem1
@@ -1347,6 +1363,7 @@ namespace unvell.ReoGrid.Editor
             this.rowCutToolStripMenuItem,
             this.rowCopyToolStripMenuItem,
             this.rowPasteToolStripMenuItem,
+             this.rowFindToolStripMenuItem,
             this.toolStripMenuItem41,
             this.insertRowToolStripMenuItem,
             this.deleteRowsToolStripMenuItem,
@@ -1388,10 +1405,15 @@ namespace unvell.ReoGrid.Editor
 			this.rowPasteToolStripMenuItem.Name = "rowPasteToolStripMenuItem";
 			this.rowPasteToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
 			this.rowPasteToolStripMenuItem.Text = "Paste";
-			// 
-			// toolStripMenuItem41
-			// 
-			this.toolStripMenuItem41.Name = "toolStripMenuItem41";
+
+            this.rowFindToolStripMenuItem.Image = global::unvell.ReoGrid.Editor.Properties.Resources.PasteHS;
+            this.rowFindToolStripMenuItem.Name = "rowFindToolStripMenuItem";
+            this.rowFindToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.rowFindToolStripMenuItem.Text = "Find";
+            // 
+            // toolStripMenuItem41
+            // 
+            this.toolStripMenuItem41.Name = "toolStripMenuItem41";
 			this.toolStripMenuItem41.Size = new System.Drawing.Size(193, 6);
 			// 
 			// insertRowToolStripMenuItem
@@ -2018,6 +2040,7 @@ namespace unvell.ReoGrid.Editor
             this.cutToolStripMenuItem,
             this.copyToolStripMenuItem,
             this.pasteToolStripMenuItem,
+			findToolStripMenuItem,
             this.clearToolStripMenuItem,
             this.toolStripMenuItem10,
             this.focusCellStyleToolStripMenuItem,
@@ -2091,10 +2114,17 @@ namespace unvell.ReoGrid.Editor
 			this.pasteToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
 			this.pasteToolStripMenuItem.Text = "&Paste";
 			this.pasteToolStripMenuItem.Click += new System.EventHandler(this.pasteToolStripMenuItem_Click);
-			// 
-			// clearToolStripMenuItem
-			// 
-			this.clearToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+
+            this.findToolStripMenuItem.Image = global::unvell.ReoGrid.Editor.Properties.Resources.PasteHS;
+            this.findToolStripMenuItem.Name = "findToolStripMenuItem";
+            this.findToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.findToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.findToolStripMenuItem.Text = "&Find";
+            this.findToolStripMenuItem.Click += new System.EventHandler(this.RowFindToolStripMenuItem_Click);
+            // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearAllToolStripMenuItem,
             this.toolStripMenuItem38,
             this.clearDataToolStripMenuItem,
@@ -2654,6 +2684,7 @@ namespace unvell.ReoGrid.Editor
 			this.sheetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.filterToolStripMenuItem,
             this.clearFilterToolStripMenuItem,
+                        finderMenuItem,
             this.toolStripMenuItem34,
             this.groupToolStripMenuItem,
             this.ungroupToolStripMenuItem,
@@ -2669,7 +2700,7 @@ namespace unvell.ReoGrid.Editor
 			// 
 			this.filterToolStripMenuItem.Image = global::unvell.ReoGrid.Editor.Properties.Resources.Filter2HS;
 			this.filterToolStripMenuItem.Name = "filterToolStripMenuItem";
-			this.filterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+			//this.filterToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
 			this.filterToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
 			this.filterToolStripMenuItem.Text = "Filter";
 			// 
@@ -3352,7 +3383,8 @@ namespace unvell.ReoGrid.Editor
 		private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
 		private System.Windows.Forms.ToolStripMenuItem pasteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
+        private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
 		private System.Windows.Forms.ToolStripMenuItem selectAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem hideRowsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
@@ -3481,7 +3513,8 @@ namespace unvell.ReoGrid.Editor
 		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem34;
 		private System.Windows.Forms.ToolStripMenuItem columnFilterToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem clearColumnFilterToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem35;
+        private System.Windows.Forms.ToolStripMenuItem finderMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem35;
 		private System.Windows.Forms.ToolStripMenuItem sheetSwitcherToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem sheetReadonlyToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
@@ -3527,12 +3560,14 @@ namespace unvell.ReoGrid.Editor
 		private System.Windows.Forms.ToolStripMenuItem colCutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem colCopyToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem colPasteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem42;
+        private System.Windows.Forms.ToolStripMenuItem colFindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem42;
 		private System.Windows.Forms.ToolStripMenuItem colFormatCellsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem rowCutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem rowCopyToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem rowPasteToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem41;
+        private System.Windows.Forms.ToolStripMenuItem rowFindToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem41;
 		private System.Windows.Forms.ToolStripMenuItem rowFormatCellsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem showFrozenLineToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
