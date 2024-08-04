@@ -1,4 +1,4 @@
-# ReoGrid
+# LXVEditor
 
 基于ReoGrid的 CSV扩展编辑器， 给csv提供更多扩展
 
